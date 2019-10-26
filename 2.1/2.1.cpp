@@ -1,41 +1,40 @@
-﻿// arrays.cpp : This file contains the 'main' function. Program execution begins and ends there.
+﻿// 2.1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include "pch.h"
 #include <iostream>
-using namespace std;
 
 int main()
 {
-	
-	
-	
-	int n = 11;
-	int sum = 0;
-	
-	while (n > 10) {
-		std::cout << "How many item will be in your array?: ";
-		std::cin >> n;
-	}
-	// Заполняем массив с клавиатуры
-	int* linkToArray = new int[n];
-	for (int i = 0; i < n; i++) {
+    double a;
+	std::cout << "Input a: ";
+	std::cin >> a;
 
-		cout << "[" << i + 1 << "]" << ": ";
-		cin >> linkToArray[i];
-	}
-	for (int i = 0; i < n; i++) {
-		
-		if (linkToArray[i] == 0) {
-			sum = 0;
+	double x;
+
+	double z;
+	std::cout << "Input z: ";
+	std::cin >> z;
+
+	double b;
+	std::cout << "Input b: ";
+	std::cin >> b;
+
+	try {
+		if (z <= 0) {
+			x = pow(z, 2) / 2;
 		}
 		else {
-			sum += linkToArray[i];
-		}		
+			x = sqrt(z);
+		}
+		double y = (b * 2 * x / cos(x)) + a * log10(abs(tan(x / 2))) ;
+		std::cout << "\t" << y << std::endl;
 	}
-	cout << "Sum after the last 0 element: " << sum << endl;
-	delete[] linkToArray;
-    
+	catch (int g) {
+		std::cout << "Caught exception number:  " << g << std::endl;
+	}
+
+	std::cout << "No exception detected!" << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

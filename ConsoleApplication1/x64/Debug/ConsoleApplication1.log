@@ -1,0 +1,4 @@
+﻿  pch.cpp
+  ConsoleApplication1.cpp
+d:\бгуир\оаип\c++\consoleapplication1\consoleapplication1\consoleapplication1.cpp(26): warning C4101: 't': unreferenced local variable
+  ConsoleApplication1.vcxproj -> D:\БГУИР\ОАИП\c++\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

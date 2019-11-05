@@ -4,14 +4,19 @@
 #include "pch.h"
 #include <iostream>
 #include <cmath>
+#include <string>
+using namespace std;
 
 int main()
 {
-	int a;
-	int b;
-	int h;
-	int x;
+	double a;
+	double b;
+	double h;
+	double x = 0;
+	double min = 0;
+	double max = 0;
 	double result;
+	double tempResult;
 	std::cout << "Input a: ";
 	std::cin >> a;
 	std::cout << "Input b: ";
@@ -19,14 +24,42 @@ int main()
 	std::cout << "Input h: ";
 	std::cin >> h;
 
-	std::cout << "Input x: ";
-	std::cin >> x;
-
+	int counter = 1;
+	string isRise = "";
 	for (a; a <= b; a++) {		
 		result = pow(x, 2)*cos(x)*sin(x);	
-		std::cout << "Your x: " << x << "\t result:" << result << std::endl;
+				
+		if (min == 0) {
+			min = result;
+		}
+		else if (result < min) {
+			min = result;
+		}
+				
+		if (max == 0) {
+			max = result;
+		}
+		else if (result > max) {
+			max = result;
+		}
+
+		if (counter >= 2) {
+			if ((x) > (x - h) && (result > tempResult)) {
+				isRise = "increase!";
+			}
+			else {
+				isRise = "decrease!";
+			}
+		}
+			
+		cout << counter << "." << "Your x: " << x << "\t result:" << result << "  " << isRise << endl;
 		x = x + h;
+		
+		counter++;
+		tempResult = result;
 	}
+
+	cout << " Min result: " << min << "\t Max result:" << max << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

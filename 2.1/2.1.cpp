@@ -20,6 +20,12 @@ int main()
 	std::cout << "Input b: ";
 	std::cin >> b;
 
+	int fun;
+	std::cout << "Select number of fun: ";
+	std::cin >> fun;
+
+	double funResult = 0;
+
 	try {
 		if (z <= 0) {
 			x = pow(z, 2) / 2;
@@ -27,7 +33,19 @@ int main()
 		else {
 			x = sqrt(z);
 		}
-		double y = (b * 2 * x / cos(x)) + a * log10(abs(tan(x / 2))) ;
+
+		switch (fun)
+		{
+			case 1:
+				funResult = 2 * x;
+				break;
+			case 2: funResult = pow(x, 2);
+				break;
+			case 3: funResult = x / 3;
+				break;
+		}
+
+		double y = (b * funResult / cos(x)) + a * log10(abs(tan(x / 2))) ;
 		std::cout << "\t" << y << std::endl;
 	}
 	catch (int g) {

@@ -2,38 +2,68 @@
 //
 
 #include "pch.h"
+#include <math.h>
 #include <iostream>
+
+
+float FX(float x);
+void PrintResult(double a, double b, double s, int n);
+bool CompareDoubles(double number1, double number2);
+double NormalizeDouble(const double val, const int digits);
 
 int main()
 {
-	int a;
-	int b;
-	int h;
-	int x;
+	float x;
+	double a = 0.1;
+	double b = 1;
+	double h = 0.1;
+	double n = 10;
 
-	double sum = 0;
+	PrintResult(a, b, h, n);
+}
 
-	std::cout << "Array length: ";
-	std::cin >> a;
+float FX(float x) {
 
-	double funcResult;
-	std::cout << "Input a: ";
-	std::cin >> a;
-	std::cout << "Input b: ";
-	std::cin >> b;
-	std::cout << "Input h: ";
-	std::cin >> h;
+	return ((1 + pow(x, 2))/2) * atan(x) - x/2;
+}
 
-	std::cout << "Input x: ";
-	std::cin >> x;
-	std::cout << "\tfun   \t||\t  sum \t" << std::endl;
-	for (a; a <= b; a++) 
-	{
-		funcResult = (1 + pow(x, 2)/2)*atan(x)-x/2;
-		sum += pow(-1, a + 1)*pow(x, 2 * a + 1) / 4 * pow(a, 2);
-		std::cout << "\t" << sum << "\t||\t" << funcResult << "\t" << std::endl;
-		x = x + h;
+float SX(float x, int n) {
+	float result;
+	float sum = 0;
+	for (int i = 1; i < n; i++) {
+		result = pow(-1, i + 1) * (pow(x, 2 * i + 1) / (4 * pow(i, 2) - 1));
+		sum = sum + result;
 	}
+	return sum;
+}
+
+void PrintResult(double a, double b, double s, int n) {
+
+	int numb = 0;
+	while (!CompareDoubles(a, b)) {
+		float answ = FX(a);
+		float answ2 = SX(a, n);
+		a = a + s;
+		numb++;
+
+		std::cout << '\n';
+		std::cout << numb;
+		std::cout << "   ";
+		std::cout << answ;
+		std::cout << "   ";
+		std::cout << answ2;
+	}
+}
+bool CompareDoubles(double number1, double number2){
+
+	if (NormalizeDouble(number1 - number2, 8) == 0)
+		return(true);
+	else
+		return(false);
+}
+double NormalizeDouble(const double val, const int digits) {
+	double power = pow(10, digits);
+	return floor((val * power) + 0.5) / power;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

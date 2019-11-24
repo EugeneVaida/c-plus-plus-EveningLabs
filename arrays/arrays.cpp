@@ -8,8 +8,6 @@ using namespace std;
 int main()
 {
 	
-	
-	
 	int n = 11;
 	int sum = 0;
 	
@@ -20,7 +18,6 @@ int main()
 	// Заполняем массив с клавиатуры
 	int* linkToArray = new int[n];
 	for (int i = 0; i < n; i++) {
-
 		cout << "[" << i + 1 << "]" << ": ";
 		cin >> linkToArray[i];
 	}

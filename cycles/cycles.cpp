@@ -24,9 +24,10 @@ int main()
 	std::cout << "Input h: ";
 	std::cin >> h;
 
+	x = a;
 	int counter = 1;
 	string isRise = "";
-	for (a; a <= b; a++) {		
+	for (x; x <= b; x += h) {		
 		result = pow(x, 2)*cos(x)*sin(x);	
 				
 		if (min == 0) {
@@ -53,8 +54,7 @@ int main()
 		}
 			
 		cout << counter << "." << "Your x: " << x << "\t result:" << result << "  " << isRise << endl;
-		x = x + h;
-		
+				
 		counter++;
 		tempResult = result;
 	}

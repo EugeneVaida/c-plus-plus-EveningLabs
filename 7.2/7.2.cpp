@@ -10,7 +10,7 @@
 
 std::string Encryption(std::string input);
 std::string Decryption(std::string input);
-std::string ReadFileTask();
+std::string ReadFile();
 
 using namespace std;
 
@@ -26,7 +26,7 @@ int main()
 	outfile << Encryption(ss);
 	outfile.close();
 
-	std::string ss1 = ReadFileTask();
+	std::string ss1 = ReadFile();
 	ss1 = Decryption(ss1);
 	std::cout << ss1;
 	return 0;
@@ -70,7 +70,7 @@ std::string Decryption(std::string input)
 	return out;
 }
 
-std::string ReadFileTask()
+std::string ReadFile()
 {
 	std::string line = "";
 	std::ifstream infile("a.txt");

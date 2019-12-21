@@ -18,11 +18,11 @@ struct Student
 };
 
 string ConvertToString(Student* spisok, int* counter);
-void ConvertToSpisok(Student* spisok, int* counter);
+void ConvertToList(Student* spisok, int* counter);
 
 vector<Student> MakeDataSetVector();
 string ConvertToStringVector(vector<Student> spisok);
-vector<Student>  ConvertToSpisokVector();
+vector<Student>  ConvertToListVector();
 vector<Student> Edit(vector<Student> spisok, int numb);
 vector<Student> Delete(vector<Student> spisok, int numb);
 vector<Student> Add(vector<Student> spisok);
@@ -33,20 +33,33 @@ void OutputStudent(Student student);
 
 Student CreateStudent();
 
+//Написать программу по обработке файла, состоящего из структур, со - 
+//держащих информацию задания 6. Средний балл рассчитать программно по введенным 
+//оценкам.Массив структур не использовать.
+//В программе реализовать следующие действия по обработке файла :
+//– создание;
+//– просмотр;
+//– добавление нового элемента;
+//– удаление(редактирование);
+//– решение индивидуального задания(первый уровень сложности  зада - ния 6).
+//Результаты выполнения индивидуального задания записать в текстовый файл.
+
+
 int main()
 {
 	ofstream outfile("test.txt");
 
 	vector<Student> v = MakeDataSetVector();
+	v = ConvertToListVector();
 	string ss = ConvertToStringVector(v);
 	cout << "******* base students list ************";
 	cout << '\n';
-	cout << ss;
+	/*cout << ss;
 	outfile << ss;
-	outfile.close();
+	outfile.close();*/
 	cout << '\n';
 	cout << "***************************************";
-	v = ConvertToSpisokVector();
+	v = ConvertToListVector();
 	int number = -1;
 	cout << '\n';
 	cout << "select number of record to edit ";
@@ -241,7 +254,7 @@ void OutputStudent(Student student) {
 
 
 
-vector<Student> ConvertToSpisokVector()
+vector<Student> ConvertToListVector()
 {
 	vector<Student> v;
 	int counter = 0;
@@ -290,7 +303,7 @@ string ConvertToString(Student* spisok, int* counter)
 	}
 	return outstr;
 }
-void ConvertToSpisok(Student* spisok, int* counter)
+void ConvertToList(Student* spisok, int* counter)
 {
 	string line;
 	ifstream infile("test.txt");

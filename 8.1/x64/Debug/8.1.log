@@ -1,3 +1,3 @@
 ﻿  8.1.cpp
-d:\бгуир\оаип\c++\consoleapplication1\8.1\8.1.cpp(230): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+d:\бгуир\оаип\c++\consoleapplication1\8.1\8.1.cpp(228): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   8.1.vcxproj -> D:\БГУИР\ОАИП\c++\ConsoleApplication1\x64\Debug\8.1.exe

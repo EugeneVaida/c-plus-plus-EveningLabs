@@ -28,8 +28,6 @@ int main()
 	Stack* begin = CreateTen();
 	PrintElementsInStack(begin);
 	Stack* data = NULL;
-	int repeat = 1;
-	int counter = 10; //set 0 if y want manual 
 	int max = GetLimitsInStack(begin, 2);
 	int min = GetLimitsInStack(begin, 1);
 

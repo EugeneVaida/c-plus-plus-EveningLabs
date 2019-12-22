@@ -50,13 +50,14 @@ int main()
 	ofstream outfile("test.txt");
 
 	vector<Student> v = MakeDataSetVector();
-	v = ConvertToListVector();
+	//v = ConvertToListVector();
+
 	string ss = ConvertToStringVector(v);
 	cout << "******* base students list ************";
 	cout << '\n';
-	/*cout << ss;
+	cout << ss;
 	outfile << ss;
-	outfile.close();*/
+	outfile.close();
 	cout << '\n';
 	cout << "***************************************";
 	v = ConvertToListVector();
